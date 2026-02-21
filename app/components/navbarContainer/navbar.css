@@ -162,12 +162,6 @@
   .nav-right {
     right: 20px;
   }
-  .nav-left ul {
-    padding-left: 13px;
-  }
-  .nav-right ul {
-    padding-right: 13px;
-  }
   img {
     width: 70px;
     height: 60px;
@@ -188,20 +182,9 @@
   .nav-right {
     right: 5px;
   }
-  .nav-left ul {
-    padding-left: 10px;
-    padding-right: 7px;
-  }
-  .nav-right ul {
-    padding-right: 10px;
-    padding-left: 7px;
-  }
   img {
     width: 60px;
     height: 50px;
     margin-top: 8px;
-  }
-  :is(.nav-right ul, .nav-left ul) li {
-    padding: 0 8px;
   }
 }

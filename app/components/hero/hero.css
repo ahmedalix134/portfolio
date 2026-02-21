@@ -270,16 +270,13 @@
   .name h4::after,
   .job h4::before,
   .job h4::after {
-    width: 120%;
+    width: 140%;
     left: -15px;
   }
   .bottom {
     width: 65%;
     font-size: 12px;
   }
-}
-@media (max-width: 1200px) {
-
 }
 /* //////////////////////////////////////// */
 .name2,
