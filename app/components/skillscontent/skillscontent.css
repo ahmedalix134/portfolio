@@ -1,0 +1,40 @@
+.skills-content {
+  z-index: 1;
+  width: 90%;
+  height: 100%;
+  background-color: #1e1e1e78;
+  border-radius: 22px;
+  backdrop-filter: blur(1px);
+}
+.neon-text {
+  color: #67e8f9; /* تركوازي هادي */
+  text-shadow:
+    0 0 5px #22d3ee,
+    0 0 10px #22d3ee,
+    0 0 20px #06b6d4,
+    0 0 40px #0891b2;
+}
+.neon-soft {
+  color: #a5f3fc;
+  text-shadow:
+    0 0 4px #22d3ee,
+    0 0 8px #06b6d4;
+}
+.neon-title {
+  color: #67e8f9;
+  text-shadow:
+    0 0 6px #22d3ee,
+    0 0 12px #06b6d4,
+    0 0 25px #0891b2;
+}
+
+.neon-item {
+  color: #a5f3fc;
+  text-shadow:
+    0 0 4px #22d3ee,
+    0 0 8px #06b6d4;
+}
+
+.neon-icon {
+  filter: drop-shadow(0 0 3px #22d3ee) drop-shadow(0 0 12px #06b6d4);
+}

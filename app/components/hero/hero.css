@@ -1,0 +1,320 @@
+:root {
+  --black: #151515;
+  --white: #f0f0f0;
+  --g1: #0b0b0f;
+  --g2: #121217;
+  --g3: #1a1a22;
+  --g4: #0f0f13;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 120deg;
+  inherits: false;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  /* background-image: url(../../images/background1.jpg); */
+  background: linear-gradient(var(--angle), #1b1b1f, #000000, #1f1f28);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  animation: rotateGradient 5s linear infinite;
+}
+@keyframes rotateGradient {
+  0% {
+    --angle: 120deg;
+  }
+  25% {
+    --angle: 180deg;
+  }
+  50% {
+    --angle: 240deg;
+  }
+  75% {
+    --angle: 300deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+.content {
+  color: var(--white);
+  height: 100%;
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 80px;
+  margin: 0 auto;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.name,
+.job {
+  width: 150px;
+  height: 150px;
+  background-color: var(--black);
+  color: var(--black);
+  text-align: center;
+  align-content: center;
+  border-radius: 95px 5px 95px 5px;
+  position: relative;
+  transform: rotate(45deg);
+  overflow: hidden;
+  opacity: 0;
+  animation: faceSequence 1.5s ease-in 0.2s forwards;
+  box-shadow: 0px 0px 5px rgb(0 133 255);
+
+  h4 {
+    transform: rotate(-45deg);
+    font-family: "Press Start 2P";
+    font-size: 12px;
+  }
+}
+
+.name h4::before {
+  content: "";
+  background-color: var(--black);
+  width: 139%;
+  height: 75px;
+  position: absolute;
+  top: -66px;
+  left: -28px;
+  animation: openeye 4s ease-in 1s infinite;
+  border-bottom: 5px solid #67676782;
+}
+.name h4::after {
+  content: "";
+  background-color: var(--black);
+  width: 139%;
+  height: 75px;
+  position: absolute;
+  bottom: -66px;
+  left: -28px;
+  animation: openeye 4s ease-in 1s infinite;
+  border-top: 5px solid #67676782;
+}
+
+.job h4::before {
+  content: "";
+  background-color: var(--black);
+  width: 139%;
+  height: 75px;
+  position: absolute;
+  top: -56px;
+  left: -28px;
+  animation: openeye 4s ease-in 1s infinite;
+  border-bottom: 5px solid #67676782;
+}
+.job h4::after {
+  content: "";
+  background-color: var(--black);
+  width: 139%;
+  height: 75px;
+  position: absolute;
+  bottom: -57px;
+  left: -28px;
+  animation: openeye 4s ease-in 1s infinite;
+  border-top: 5px solid #67676782;
+}
+
+.bottom {
+  text-align: center;
+  opacity: 0;
+  width: 60%;
+  color: var(--black);
+  animation: 0.5s linear 0.2s forwards smile;
+  position: relative;
+  h3:first-child {
+    background-color: var(--white);
+    border-radius: 50% 50% 0 0;
+    margin-bottom: 3px;
+  }
+  h3:nth-child(2) {
+    background-color: var(--white);
+    border-radius: 0 0 50% 50%;
+  }
+}
+.bottom {
+  text-align: center;
+  opacity: 0;
+  width: 60%;
+  color: var(--black);
+  animation: 0.5s linear 0.2s forwards smile;
+  position: relative;
+}
+
+@keyframes showface {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes faceSequence {
+  0% {
+    opacity: 0;
+    background-color: var(--black);
+  }
+  50% {
+    opacity: 1;
+    background-color: var(--black);
+  }
+  100% {
+    opacity: 1;
+    background-color: var(--white);
+  }
+}
+@keyframes openeye {
+  0% {
+    height: 75px;
+  }
+  20% {
+    height: 30px;
+  }
+  40% {
+    height: 30px;
+  }
+  60% {
+    height: 30px;
+  }
+  80% {
+    height: 30px;
+  }
+  100% {
+    height: 75px;
+  }
+}
+
+@keyframes smile {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 85vh;
+  }
+  .content {
+    width: 80%;
+    gap: 40px;
+  }
+  .top {
+    width: 80%;
+  }
+  .name,
+  .job {
+    width: 120px;
+    height: 120px;
+  }
+  .name h4::before,
+  .name h4::after,
+  .job h4::before,
+  .job h4::after {
+    width: 130%;
+    left: -20px;
+  }
+  .bottom {
+    width: 60%;
+  }
+}
+@media (max-width: 480px) {
+  .hero {
+    height: 70vh;
+  }
+  .content {
+    width: 90%;
+    gap: 20px;
+  }
+  .top {
+    font-size: 12px;
+  }
+  .name h4,
+  .job h4 {
+    font-size: 8px;
+  }
+  .name,
+  .job {
+    width: 85px;
+    height: 85px;
+  }
+  .name h4::before,
+  .name h4::after,
+  .job h4::before,
+  .job h4::after {
+    width: 120%;
+    left: -15px;
+  }
+  .bottom {
+    width: 65%;
+    font-size: 12px;
+  }
+}
+/* //////////////////////////////////////// */
+.name2,
+.job2 {
+  color: #000;
+  border-radius: 0 0 75px 75px;
+  width: 180px;
+  height: 100px;
+  position: relative;
+  h4 {
+    background-color: white;
+    height: 100%;
+    text-align: center;
+    align-content: center;
+    border-radius: 0 0 80px 80px;
+  }
+}
+
+.name2::before,
+.job2::before {
+  content: "";
+  background-color: #fff;
+  width: 150%;
+  height: 20px;
+  position: absolute;
+  left: -40px;
+  top: 0;
+}
+.name2 {
+  transform: rotate(4deg);
+}
+.job2 {
+  transform: rotate(-4deg);
+}
+.top-bottom span,
+.bottom-bottom span {
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  padding: 2px;
+}
